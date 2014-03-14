@@ -87,7 +87,8 @@ Vagrant.configure("2") do |config|
       "recipe[php::module_mysql]",
       "recipe[apache2::mod_php5]",
       "recipe[mysql::ruby]",
-      "recipe[wpapp]"
+      "recipe[wpapp::default]"
+# mysql::ruby and wpapp::default need to be commented out for first run... stupid est base box...
     ]
   end
 end
