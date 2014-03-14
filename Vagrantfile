@@ -86,8 +86,8 @@ Vagrant.configure("2") do |config|
       "recipe[php]",
       "recipe[php::module_mysql]",
       "recipe[apache2::mod_php5]",
-      #"recipe[mysql::ruby]",
-      #"recipe[wpapp]"
+      "recipe[mysql::ruby]",
+      "recipe[wpapp]"
     ]
   end
 end

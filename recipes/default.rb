@@ -11,8 +11,11 @@ apache_site "default" do
   enable true
 end
 
-mysql_database node['phpapp']['database'] do
+mysql_database_user node['wpapp']['db_username'] do
   connection ({:host => 'localhost', :username => 'root', :password => node['mysql']['server_root_password']})
-  action :create
+  password node['wpapp']['db_password']
+  database_name node['wpapp']['database']
+  privileges [:select,:update,:insert,:create,:delete]
+  action :grant
 end
 
